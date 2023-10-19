@@ -16,6 +16,8 @@
                 <span id="min">00</span>
                 <span>:</span>
                 <span id="sec">00</span>
+                <span >:</span>
+                <span id="mili">00</span>
             </div>
 
         </div>
@@ -25,6 +27,7 @@
         let hrs = document.getElementById("hrs")
         let min = document.getElementById("min")
         let sec = document.getElementById("sec")
+        let mili = document.getElementById("mili")
 
         setInterval(()=>{
             let currentTime = new Date();
@@ -32,7 +35,18 @@
         hrs.innerHTML = (currentTime.getHours() < 10?"0":"") + currentTime.getHours();
         min.innerHTML = (currentTime.getMinutes() < 10?"0":"") + currentTime.getMinutes();
         sec.innerHTML = (currentTime.getSeconds() < 10?"0":"") + currentTime.getSeconds();
-        }, 1000)
+        mili.innerHTML = (currentTime.getMilliseconds() < 10?"0":"") + currentTime.getMilliseconds();
+
+        // hrs.innerHTML =  currentTime.getHours();
+        // min.innerHTML =  currentTime.getMinutes();
+        // sec.innerHTML =  currentTime.getSeconds();
+
+        //the above code will just make the time appear as 1 hrs: 5min: 2sec
+        //to make the time complete with2 digits we have to add conditional statement
+        // if the extracted time is less than 10 hours or 10 mins or 10 sec, it will add 0 as string to the extracted time
+
+
+        }, 100)
 
        
 
